@@ -81,10 +81,15 @@ For evaluation we used 44 random 768x768 RGB images from the original dataset. T
 - **self.parts_count** - count of part filters.
 - **self.part_w** - list of length self.parts_count which stores the part filters widths. Must be < self.image_w.
 - **self.part_h** - list of length self.parts_count which stores the part filters heights. Must be < self.image_h.
-- **self.downscale** - image downscale factor on each pyramid layer.
-- **self.conf_thresh** - score that the model will consider the prediction to be a true.
-- **self.IoU_thresh** - score to evaluate the overlap between predicted bounding boxes and ground truth bounding boxes to be considered a true positive.
-- **self.mode** - flag which determines whether to train models or evaluate.
+- **self.downscale** - image downscale factor on each 
+  pyramid layer.
+- **self.conf_thresh** - score that the model will 
+  consider the prediction to be a true.
+- **self.IoU_thresh** - score to evaluate the overlap 
+  between predicted bounding boxes and ground truth 
+  bounding boxes to be considered a true positive.
+- **self.mode** - flag which determines whether to 
+  train models or evaluate.
 - **self.models** - dict of latent variable models.
 
 ## Results
