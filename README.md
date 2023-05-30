@@ -15,7 +15,6 @@ that represent objects using local part templates and geometric constraints on t
 
 In this implementation, the only thing that differs from the original paper is that xgboost is used instead of SVM.
 
-
 ## Useful links
 
 1. [Dalal N., Triggs B. Histograms of oriented gradients for human detection](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)
@@ -58,7 +57,7 @@ scene products, which are orthorectified to a 3-meter pixel size. The dataset is
   <img src="https://github.com/Chebart/DPM/assets/88379173/2d8c9035-62b3-452f-bb83-f07c2895c5cf">
 </p>
 
-For evaluation we used 50 random 768x768 RGB images from the original dataset. They look something like this:
+For evaluation we used 44 random 768x768 RGB images from the original dataset. They look something like this:
 
 <p align="center">
   <img width = 200 height = 200 src="https://github.com/Chebart/DPM/assets/88379173/71d44840-e869-41eb-a264-870bbc7847be">
@@ -67,9 +66,8 @@ For evaluation we used 50 random 768x768 RGB images from the original dataset. T
   <img width = 200 height = 200 src="https://github.com/Chebart/DPM/assets/88379173/a10d0cba-a956-4914-91fd-1309faba5b7d">
 </p>
 
-
 ## Explain class variables
-<img align="right" src="https://github.com/Chebart/DPM/assets/88379173/843487ad-e788-47cb-9a6b-16492898b641">
+<img align="right" width = 450 height = 600 src="https://github.com/Chebart/DPM/assets/88379173/fc53b17d-207a-4937-8e23-8f82fa6ca0f0">
 
 - **self.image_h** - training image and sliding window height.
 - **self.image_w** - training image and sliding window width.
@@ -90,3 +88,11 @@ For evaluation we used 50 random 768x768 RGB images from the original dataset. T
 - **self.models** - dict of latent variable models.
 
 ## Results
+<img align="right" src="https://github.com/Chebart/DPM/assets/88379173/f2a1c154-5c83-4a84-b1b2-fdfc41a223da">
+
+DPM achieves poor results on Airbus Ship Detection dataset compared to modern neural networks for several reasons:
+1. It is really difficult to find best parameters for classifiers and filters, even using GreedSearchCV and configurations from articles.
+2. Most of the ships in the images are small relative to the size of the image, this makes the task of detecting objects more challenging.
+3. Traditional machine learning algorithms even such as gradient boosting cannot learn complex dependencies. They perform well with tabular data, but not with images.
+
+The inference time is about 5 seconds per image because DPM was implemented on numpy and worked with the CPU.
