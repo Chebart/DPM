@@ -67,7 +67,7 @@ For evaluation we used 44 random 768x768 RGB images from the original dataset. T
 </p>
 
 ## Explain class variables
-<img align="right" width = 400 height = 700 src="https://github.com/Chebart/DPM/assets/88379173/5de409e2-e97e-426e-8cdc-ffc8f9fb7f3b">
+<img align="right"  widtht = 400 src="https://github.com/Chebart/DPM/assets/88379173/f2dd623d-cfac-49f8-afbc-75bd4f7e90cd">
 
 - **self.image_h** - training image and sliding window height.
 - **self.image_w** - training image and sliding window width.
@@ -90,8 +90,7 @@ For evaluation we used 44 random 768x768 RGB images from the original dataset. T
   bounding boxes to be considered a true positive.
 - **self.mode** - flag which determines whether to 
   train models or evaluate.
-- **self.models** - dict of latent variable models.|
-
+- **self.models** - dict of latent variable models.
 
 ## Results
 <img align="right" src="https://github.com/Chebart/DPM/assets/88379173/f2a1c154-5c83-4a84-b1b2-fdfc41a223da">
